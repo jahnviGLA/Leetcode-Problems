@@ -1,0 +1,25 @@
+// Last updated: 2/12/2026, 12:39:37 PM
+1/**
+2 * Definition for singly-linked list.
+3 * public class ListNode {
+4 *     int val;
+5 *     ListNode next;
+6 *     ListNode() {}
+7 *     ListNode(int val) { this.val = val; }
+8 *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+9 * }
+10 */
+11class Solution {
+12    public ListNode reverseList(ListNode head) {
+13        ListNode prev=null;
+14        ListNode curr=head;
+15        while (curr!=null) {
+16            ListNode next=curr.next;  
+17            curr.next=prev;           
+18            prev=curr;                
+19            curr=next;                
+20        }
+21        return prev;  
+22    }
+23}
+24
